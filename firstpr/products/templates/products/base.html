@@ -1,0 +1,29 @@
+{% load static %} <!--шаблонная команда независимо от названия папки-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'tryed.css'%}">
+</head>
+<body>
+
+    <h1 id="glav">Наш ресторанчик</h1>
+
+    <div class="nabor">
+   <a href="{% url 'home' %}">домашняя</a>
+   <br>
+   <br>
+   <a href="{% url 'register' %}">регистрация</a>
+
+    <br>
+    <br>
+    <a href="{% url 'menu' %}">меню</a>
+    </div>
+    
+    {% block content %}{% endblock %}
+    
+</body>
+</html>
